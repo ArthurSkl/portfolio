@@ -1,110 +1,123 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Arthur Frantz | Engenheiro de Software</title>
-  <meta name="description" content="Portfólio de Arthur Frantz, Engenheiro de Software com experiência em desenvolvimento web, backend e frontend." />
-  <link rel="icon" href="assets/favicon.ico" type="image/x-icon" />
+    <!-- Meta Básicas -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Font Awesome (ícones) -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <!-- SEO -->
+    <title>Arthur Frantz | Engenheiro de Software</title>
+    <meta name="description"
+        content="Portfólio de Arthur Frantz, Engenheiro de Software com experiência em desenvolvimento web, backend e frontend.">
+    <meta name="keywords"
+        content="Engenheiro de Software, Desenvolvedor Backend, Frontend, Java, PHP, React, Node.js">
+    <meta name="author" content="Arthur Frantz">
 
-  <!-- Seu CSS -->
-  <link rel="stylesheet" href="front.css" />
+    <!-- Open Graph -->
+    <meta property="og:title" content="Arthur Frantz | Engenheiro de Software">
+    <meta property="og:description"
+        content="Desenvolvedor com formação em Engenharia de Software e curso técnico em Desenvolvimento de Sistemas.">
+    <meta property="og:type" content="website">
 
-  <style>
-    /* Feedback visual do formulário (pode ficar no front.css) */
-    .form-feedback { margin-top: 12px; font-weight: 600; display:none; }
-    .form-feedback.success { color: #0a7; display:none; }
-    .form-feedback.error { color: #c00; display:none; }
-    .btn-submit[disabled] { opacity: 0.6; cursor: not-allowed; }
-    .project-tech span { display:inline-block; margin-right:8px; padding:4px 8px; background:#f2f2f2; border-radius:6px; font-size:0.85rem; }
-    /* Pequeno reset para inputs */
-    input, textarea, button { font-family: inherit; }
-  </style>
+    <!-- Favicon -->
+    <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="front.css">
 </head>
+<script src="/animations;js"></script>
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
+<script>
+(function(){
+emailjs.init("SUA_PUBLIC_KEY");
+})();
+</script>
+
+<script>
+    document.getElementById("contact-form").addEventListener("submit", function(event) {
+    event.preventDefault();
+    
+    emailjs.send("service_0mq6rbb","SEU_TEMPLATE_ID",{
+    from_name: document.getElementById("nome").value,
+    reply_to: document.getElementById("email").value,
+    message: document.getElementById("mensagem").value
+    })
+    .then(function(){
+    alert("Mensagem enviada com sucesso!");
+    })
+    .catch(function(error){
+    alert("Erro ao enviar mensagem.");
+    console.log(error);
+    });
+    });
+    </script>
 <body>
 
-  <!-- Header -->
-  <header>
-    <div class="container">
-      <h1>Arthur Frantz</h1>
-      <nav aria-label="Menu principal">
-        <ul>
-          <li><a href="#sobre">Sobre</a></li>
-          <li><a href="#projetos">Projetos</a></li>
-          <li><a href="#qualificacoes">Qualificações</a></li>
-          <li><a href="#contato">Contato</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
 
-  <!-- Hero -->
-  <section id="hero">
-    <div class="container hero-content">
-      <div class="hero-text">
-        <h2>Arthur Frantz</h2>
-        <h3><span class="typing"></span></h3>
-
-        <p>Engenheiro de Software especializado em interfaces modernas, integração com APIs REST e construção de aplicações escaláveis.</p>
-
-        <div class="hero-buttons">
-          <a href="#projetos" class="btn-primary">Ver Projetos</a>
-          <a href="https://github.com/ArthurSkl" target="_blank" class="btn-outline"><i class="fa-brands fa-github"></i> GitHub</a>
-          <a href="https://www.linkedin.com/in/arthurfrantz" target="_blank" class="btn-outline"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <h1>Arthur Frantz</h1>
+            <nav aria-label="Menu principal">
+                <ul>
+                    <li><a href="#sobre">Sobre</a></li>
+                    <li><a href="#projetos">Projetos</a></li>
+                    <li><a href="#qualificacoes">Qualificações</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+            </nav>
         </div>
-      </div>
-    </div>
-    <div class="scroll-indicator"></div>
-  </section>
+    </header>
 
-  <main>
-    <!-- Sobre -->
-    <section id="sobre">
-      <div class="container">
-        <h2>Sobre Mim</h2>
-        <p>Sou formado em Engenharia de Software e Técnico em Desenvolvimento de Sistemas. Possuo experiência com Java, PHP, Node.js, React Native, SQL e testes automatizados.</p>
-      </div>
+    <!-- Hero -->
+    <section id="hero">
+        <div class="container hero-content">
+            <div class="hero-text">
+                <h2>Arthur Frantz</h2>
+                <h3><span class="typing"></span></h3>
+
+                <p>
+                    Engenheiro de Software especializado em interfaces modernas,
+                    integração com APIs REST e construção de aplicações escaláveis.
+                </p>
+
+                <div class="hero-buttons">
+                    <a href="#projetos" class="btn-primary">Ver Projetos</a>
+
+                    <a href="https://github.com/ArthurSkl" target="_blank" class="btn-outline">
+                        <i class="fa-brands fa-github"></i> GitHub
+                    </a>
+
+                    <a href="https://www.linkedin.com/in/arthurfrantz" target="_blank"
+                        class="btn-outline">
+                        <i class="fa-brands fa-linkedin"></i> LinkedIn
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="scroll-indicator"></div>
     </section>
 
-    <!-- Projetos -->
-    <section id="projetos">
-      <div class="container">
-        <h2>Projetos em Destaque</h2>
+    <main>
 
-        <div class="projects-grid">
-
-          <div class="project-card">
-            <img src="assets/senac-project.png" alt="Sistema Web SENAC">
-            <div class="project-content">
-              <h3>Sistema Web - SENAC Gastronomia</h3>
-              <p>Sistema web desenvolvido para gerenciamento interno, com integração backend e manipulação de dados via API REST.</p>
-              <div class="project-tech">
-                <span>PHP</span><span>SQL</span><span>JavaScript</span><span>REST API</span>
-              </div>
-              <div class="project-buttons">
-                <a href="https://github.com/ArthurSkl/ETG-Restaurante" target="_blank" class="btn-primary">Demo / Código</a>
-                <a href="https://github.com/ArthurSkl" target="_blank" class="btn-outline">GitHub</a>
-              </div>
+        <!-- Sobre -->
+        <section id="sobre">
+            <div class="container">
+                <h2>Sobre Mim</h2>
+                <p>
+                    Sou formado em Engenharia de Software e Técnico em Desenvolvimento de Sistemas.
+                    Possuo experiência com Java, PHP, Node.js, React Native, SQL e testes automatizados.
+                </p>
             </div>
-          </div>
+        </section>
 
-<<<<<<< HEAD
-          <div class="project-card">
-            <img src="assets/controle-estoque.png" alt="Sistema Controle de Estoque">
-            <div class="project-content">
-              <h3>Sistema Controle de Estoque</h3>
-              <p>Aplicação web para gerenciamento de produtos com armazenamento local e manipulação dinâmica do DOM.</p>
-              <div class="project-tech">
-                <span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>DOM</span><span>localStorage</span><span>JSON</span>
-              </div>
-              <div class="project-buttons">
-                <a href="https://sistema-de-controle-de-estoque-fron.vercel.app/" target="_blank" class="btn-primary">Demo</a>
-                <a href="https://github.com/ArthurSkl/Sistema-de-Controle-de-Estoque-Frontend-" target="_blank" class="btn-outline">GitHub</a>
-              </div>
-=======
         <!-- Projetos -->
         <section id="projetos">
             <div class="container">
@@ -153,7 +166,12 @@
                             <div class="project-tech">
                                 
                                 
+                                <span>HTML5</span>
+                                <span>CSS3</span>
                                 <span>JavaScript</span>
+                                <span>DOM</span>
+                                <span>localStorage</span>
+                                <span>JSON</span>
                             </div>
 
                             <div class="project-buttons">
@@ -165,151 +183,90 @@
                     </div>
 
                 </div>
->>>>>>> parent of 492e972 (fix)
             </div>
-          </div>
+        </section>
 
+        <!-- Qualificações -->
+        <section id="qualificacoes">
+            <div class="container">
+                <h2>Qualificações</h2>
+
+                <div class="skills-category">
+
+                    <h3><i class="fa-solid fa-code"></i> Desenvolvimento Frontend</h3>
+                    <ul class="skills">
+                        <li><i class="fa-brands fa-html5"></i> HTML</li>
+                        <li><i class="fa-brands fa-css3-alt"></i> CSS</li>
+                        <li><i class="fa-brands fa-js"></i> JavaScript</li>
+                        <li><i class="fa-brands fa-bootstrap"></i> Bootstrap</li>
+                        <li><i class="fa-brands fa-react"></i> React Native</li>
+                    </ul>
+
+                    <h3><i class="fa-solid fa-server"></i> Desenvolvimento Backend</h3>
+                    <ul class="skills">
+                        <li><i class="fa-brands fa-node-js"></i> Node.js</li>
+                        <li><i class="fa-brands fa-php"></i> PHP</li>
+                        <li><i class="fa-brands fa-python"></i> Python</li>
+                        <li><i class="fa-brands fa-java"></i> Java</li>
+                        <li><i class="fa-solid fa-database"></i> SQL</li>
+                    </ul>
+
+                    <h3><i class="fa-solid fa-database"></i> Banco de Dados</h3>
+                    <ul class="skills">
+                        <li>MySQL</li>
+                        <li>SQLite</li>
+                        <li>MySQL Workbench</li>
+                        <li>MongoDB</li>
+                    </ul>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Contato -->
+        <section id="contato">
+            <div class="container">
+                <h2>Contato</h2>
+
+                <form class="contact-form">
+
+                    <div class="form-group">
+                        <label for="nome">Nome</label>
+                        <input type="text" id="nome" name="nome"
+                            placeholder="Seu nome completo" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email"
+                            placeholder="seuemail@email.com" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="mensagem">Mensagem</label>
+                        <textarea id="mensagem" name="mensagem" rows="5"
+                            placeholder="Escreva sua mensagem..." required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-submit">
+                        Enviar Mensagem
+                    </button>
+
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Arthur Frantz - Todos os direitos reservados.</p>
         </div>
-      </div>
-    </section>
+    </footer>
 
-    <!-- Qualificações -->
-    <section id="qualificacoes">
-      <div class="container">
-        <h2>Qualificações</h2>
+    <!-- Script -->
+    <script src="animations.js"></script>
 
-        <h3>Frontend</h3>
-        <ul>
-          <li>HTML</li><li>CSS</li><li>JavaScript</li><li>DOM</li><li>localStorage</li>
-        </ul>
-
-        <h3>Backend</h3>
-        <ul>
-          <li>Node.js</li><li>PHP</li><li>Python</li><li>Java</li><li>SQL</li>
-        </ul>
-
-        <h3>Banco de Dados</h3>
-        <ul>
-          <li>MySQL</li><li>SQLite</li><li>MongoDB</li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- Contato -->
-    <section id="contato">
-      <div class="container">
-        <h2>Contato</h2>
-
-        <form id="contact-form" class="contact-form" novalidate>
-          <div class="form-group">
-            <label for="nome">Nome</label>
-            <input type="text" id="nome" name="nome" placeholder="Seu nome completo" required />
-          </div>
-
-          <div class="form-group">
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" placeholder="seuemail@email.com" required />
-          </div>
-
-          <div class="form-group">
-            <label for="mensagem">Mensagem</label>
-            <textarea id="mensagem" name="mensagem" rows="5" placeholder="Escreva sua mensagem..." required></textarea>
-          </div>
-
-          <button type="submit" class="btn-submit">Enviar Mensagem</button>
-
-          <div class="form-feedback success" id="success-msg">Mensagem enviada com sucesso! Obrigado pelo contato.</div>
-          <div class="form-feedback error" id="error-msg">Erro ao enviar mensagem. Tente novamente mais tarde.</div>
-        </form>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="container">
-      <p>&copy; 2026 Arthur Frantz</p>
-    </div>
-  </footer>
-
-  <!-- scripts (no final da página) -->
-  <script src="animations.js"></script>
-
-  <!-- EmailJS (configurado com suas chaves) -->
-  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      // ======= CONFIGURAÇÃO (já preenchida) =======
-      const EMAILJS_PUBLIC_KEY = "fe0GJ6d3BHGGIIOqJ";       // sua Public Key
-      const EMAILJS_SERVICE_ID = "service_0mq6rbb";         // seu Service ID
-      const EMAILJS_TEMPLATE_ID = "template_cuqyw98";      // seu Template ID
-      // =============================================
-
-      // inicializa EmailJS
-      try {
-        emailjs.init(EMAILJS_PUBLIC_KEY);
-      } catch (e) {
-        console.warn("Erro ao inicializar EmailJS:", e);
-      }
-
-      const form = document.getElementById('contact-form');
-      const btn = form.querySelector('.btn-submit');
-      const successMsg = document.getElementById('success-msg');
-      const errorMsg = document.getElementById('error-msg');
-
-      function showSuccess(text) {
-        successMsg.textContent = text || "Mensagem enviada com sucesso! Obrigado pelo contato.";
-        successMsg.style.display = 'block';
-        errorMsg.style.display = 'none';
-      }
-      function showError(text) {
-        errorMsg.textContent = text || "Erro ao enviar mensagem. Tente novamente mais tarde.";
-        errorMsg.style.display = 'block';
-        successMsg.style.display = 'none';
-      }
-
-      form.addEventListener('submit', function (ev) {
-        ev.preventDefault();
-
-        // validação simples
-        const nome = document.getElementById('nome').value.trim();
-        const email = document.getElementById('email').value.trim();
-        const mensagem = document.getElementById('mensagem').value.trim();
-
-        if (!nome || !email || !mensagem) {
-          showError("Preencha todos os campos antes de enviar.");
-          return;
-        }
-
-        // desabilita botão
-        btn.disabled = true;
-        btn.textContent = "Enviando...";
-
-        // parâmetros que seu template usa (ajuste os nomes se o template tiver variáveis diferentes)
-        const templateParams = {
-          from_name: nome,
-          reply_to: email,
-          message: mensagem
-          // -- Se o seu template usa um campo to_email, adicione aqui:
-          // to_email: "arthurskl6@gmail.com"
-        };
-
-        emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, templateParams)
-          .then(function () {
-            showSuccess();
-            form.reset();
-            // você pode redirecionar ou executar outra ação aqui
-          }, function (err) {
-            console.error("Erro EmailJS:", err);
-            // fallback opcional: abrir o cliente de email do usuário (descomente se desejar)
-            // window.location.href = `mailto:arthurskl6@gmail.com?subject=Contato%20do%20Portifolio&body=${encodeURIComponent('Nome: '+nome+'\nEmail: '+email+'\n\n'+mensagem)}`;
-            showError("Erro ao enviar mensagem. Tente novamente mais tarde.");
-          })
-          .finally(() => {
-            btn.disabled = false;
-            btn.textContent = "Enviar Mensagem";
-          });
-      });
-    });
-  </script>
 </body>
+
 </html>
