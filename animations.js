@@ -56,3 +56,39 @@ document.addEventListener("DOMContentLoaded", function () {
 
     typeEffect();
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+    document.querySelectorAll(".project-card").forEach((card) => {
+        const slides = card.querySelectorAll(".slide");
+        const prevBtn = card.querySelector(".gallery-btn.prev");
+        const nextBtn = card.querySelector(".gallery-btn.next");
+
+        if (!slides.length) return;
+
+        let current = 0;
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.classList.toggle("active", i === index);
+            });
+        }
+
+        if (prevBtn) {
+            prevBtn.addEventListener("click", () => {
+                current = (current - 1 + slides.length) % slides.length;
+                showSlide(current);
+            });
+        }
+
+        if (nextBtn) {
+            nextBtn.addEventListener("click", () => {
+                current = (current + 1) % slides.length;
+                showSlide(current);
+            });
+        }
+
+        showSlide(current);
+    });
+});
+
+

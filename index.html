@@ -30,7 +30,7 @@
     <!-- CSS -->
     <link rel="stylesheet" href="front.css">
 </head>
-<script src="/animations;js"></script>
+
 <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 
 <script>
@@ -39,24 +39,7 @@ emailjs.init("SUA_PUBLIC_KEY");
 })();
 </script>
 
-<script>
-    document.getElementById("contact-form").addEventListener("submit", function(event) {
-    event.preventDefault();
-    
-    emailjs.send("service_0mq6rbb","SEU_TEMPLATE_ID",{
-    from_name: document.getElementById("nome").value,
-    reply_to: document.getElementById("email").value,
-    message: document.getElementById("mensagem").value
-    })
-    .then(function(){
-    alert("Mensagem enviada com sucesso!");
-    })
-    .catch(function(error){
-    alert("Erro ao enviar mensagem.");
-    console.log(error);
-    });
-    });
-    </script>
+
 <body>
 
 
@@ -126,27 +109,31 @@ emailjs.init("SUA_PUBLIC_KEY");
                 <div class="projects-grid">
 
                     <div class="project-card">
-                        <img src="assets/Captura de tela 2026-03-10 103848.png" alt="Sistema Web SENAC">
-
+                        <!-- GALERIA ENVOLTA EM .project-gallery -->
+                        <div class="project-gallery">
+                            <div class="project-slides">
+                                <img class="slide active" src="assets/senacLogin.png" alt="Imagem 1 SENAC">
+                                <img class="slide" src="assets/SenacSalas.png" alt="Imagem 2 SENAC">
+                            </div>
+                            
+                            <button class="gallery-btn prev" type="button" aria-label="Anterior">❮</button>
+                            <button class="gallery-btn next" type="button" aria-label="Próxima">❯</button>
+                        </div>
+                    
+                        <!-- CONTEÚDO SEMPRE AQUI EMBAIXO -->
                         <div class="project-content">
                             <h3>Sistema Web - SENAC Gastronomia</h3>
-
-                            <p>
-                                Sistema web desenvolvido para gerenciamento interno,
-                                com integração backend e manipulação de dados via API REST.
-                            </p>
-
+                            <p>Sistema web desenvolvido para gerenciamento interno, com integração backend e manipulação de dados via API REST.</p>
+                            
                             <div class="project-tech">
                                 <span>PHP</span>
                                 <span>SQL</span>
                                 <span>JavaScript</span>
                                 <span>REST API</span>
                             </div>
-
+                            
                             <div class="project-buttons">
-                                
-                                <a href="https://github.com/ArthurSkl" target="_blank"
-                                    class="btn-outline">GitHub</a>
+                                <a href="https://github.com/ArthurSkl" target="_blank" class="btn-outline">GitHub</a>
                             </div>
                         </div>
                     </div>
